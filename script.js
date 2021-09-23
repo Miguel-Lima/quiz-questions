@@ -2,15 +2,18 @@
 let currentQuestion = 0;
 let correctAnswers= 0;
 
-showQuestions();
+showQuestion();
 
 //Functions
-function showQuestions() {
+function showQuestion() {
     if(questions[currentQuestion]) {
         let q = questions[currentQuestion];
 
-        document.querySelector('.scoreArea').style.display= 'none';
-        document.querySelector('.questionArea').style.display= 'block';
+        let pct = Math.floor((currentQuestion / questions.length) * 100);
+        document.querySelector('.progress--bar').style.width = `${pct}%`;
+
+        document.querySelector('.scoreArea').style.display = 'none';
+        document.querySelector('.questionArea').style.display = 'block';
 
         document.querySelector('.question').innerHTML = q.question;
         document.querySelector('.options').innerHTML = '';
@@ -26,17 +29,29 @@ function showQuestions() {
         });
 
     }else {
-        // finish questions
+        finishQuiz();
     }
 }
 
 function optionClickEvent(e) {
-    let clickdOption = parseInt(e.target.getAttribute('data-op'));
+    let clickedOption = parseInt(e.target.getAttribute('data-op'));
 
-    if(questions[currentQuestion].answer === clickdOption) {
+    if(questions[currentQuestion].answer === clickedOption) {
         correctAnswers++;
     }
     
     currentQuestion++;
-    showQuestions();
+    showQuestion();
+}
+
+function finishQuiz() {
+    let points = Math.floor((correctAnswers / questions.length) *100);
+
+    document.querySelector('.scorePct').innerHTML = `Acertou ${points}%`;
+    document.querySelector('.scoreText2').innerHTML = `Você respondeu ${questions.length} questões e acertou ${correctAnswers}`;
+
+
+    document.querySelector('.scoreArea').style.display= 'block';
+    document.querySelector('.questionArea').style.display= 'none';
+    document.querySelector('.progress--bar').style.width = '100%';
 }
