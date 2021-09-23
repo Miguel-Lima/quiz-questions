@@ -20,7 +20,7 @@ h1 {
 }
 
 .progress {
-    height: 5px;
+    height: 10px;
     position: fixed;
     left: 0;
     top: 0;
