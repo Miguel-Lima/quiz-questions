@@ -10,11 +10,22 @@
 
  </div>
  
-### Project in focus of questions with right and wrong answers. A progress bar was also made according to the progress of the questions.
-</br> 
+   ## 🚀 Technologies
+   
+   
+   It was used in this project
+  - ✔️ Javascript
+  - ✔️ HTML
+  - ✔️ CSS
 
- #### Languages: 
+<br>
+
+# About this project
+ > - An HTML and CSS structure was made to organize the position of the questions.
+ > - A progress bar as you advance the questions has been entered.
+ > - Based on a Json structure of information that contains the correct questions and answer, it will be computed at the end of the project.
+ > - At the end of this project you will receive your performance according to the number of hits you have obtained.
  
- + **HTML**
- + **CSS**
- + **JAVASCRIPT**
+ <br>
+ 
+ # Project Complete 💥
